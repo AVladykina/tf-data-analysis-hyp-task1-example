@@ -22,7 +22,7 @@ def solution(x_success: int,
     ci_low, ci_high = proportion_confint(count=[y_success, x_success], nobs=[y_cnt, x_cnt], alpha=0.05, method='wilson')
 
     # Проверяем, содержит ли доверительный интервал ноль
-    return  ci_low < 0
+    return  ci_low.any() < 0
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
